@@ -31,21 +31,7 @@ cd SnowSnap
 npm install
 ```
 
-## Usage
-To get started with generating artifacts, follow these steps:
-
-### Step 1: Prepare the CSV File
-
-Generate your CSV file containing table definitions. A sample CSV file is already included for tables in a Snowflake system. Ensure your file follows the correct format:
-
-```csv
-SCHEMANAME,TABLENAME,TABLEDESCRIPTION,COLNAME,KEY,COLDESCRIPTION,TYPE,LENGTH,SCALE
-```
-
-
-
-
-### Step 2: Run the Tool
+### Run the Tool
 
 Run the tool with the following command:
 
@@ -58,14 +44,25 @@ This will start the web application which will be available here
 http://localhost:3010
 ```
 
-### Step 3: Using the Tool
-The tool will process the CSV file and generate JSON files for the following artifacts:
+## Usage
+To get started with generating artifacts, follow these steps:
+
+### Step 1: Prepare the CSV File
+
+Generate your CSV file containing table definitions. A sample CSV file is already included for tables in a Snowflake system. Ensure your file follows the correct format:
+
+```csv
+SCHEMANAME,TABLENAME,TABLEDESCRIPTION,COLNAME,KEY,COLDESCRIPTION,TYPE,LENGTH,SCALE
+```
+
+### Step 2: Upload and process the CSV file
+Now process the CSV file in the application and generate JSON files for the following artefacts:
 
 	•	Local Table JSON: <tableName>_local_table.json
 	•	Remote Table JSON: <tableName>_remote_table.json
 	•	Dataflow JSON: <tableName>_dataflow.json
 
-The generated JSON files will be saved in the download directory and you can access them from the browser as you would when you normally download a file.
+The generated JSON files will be saved in the download directory, and you can access them from the browser as you would when you normally download a file.
 
 ### Step 3: Upload Artifacts to SAP Datasphere
 
