@@ -12,7 +12,7 @@ This Node.js tool automates the generation of necessary SAP Datasphere artifacts
 ## Prerequisites
 
 - **Node.js**: Ensure you have Node.js installed. You can download it from [here](https://nodejs.org/).
-- **CSV file**: The tool uses a CSV file that defines the table schema, you will find an example in the  `/examples` directory. This file contains definitions for tables from a Snowflake system. The CSV format is as follows:
+- **CSV file**: The tool uses a CSV file that defines the table schema, you will find an example in the  `/examples` directory. This file contains definitions for some tables from a Snowflake system. The CSV format is as follows:
 
   ```csv
   SCHEMANAME,TABLENAME,TABLEDESCRIPTION,COLNAME,KEY,COLDESCRIPTION,TYPE,LENGTH,SCALE
@@ -25,7 +25,7 @@ This Node.js tool automates the generation of necessary SAP Datasphere artifacts
 git clone https://github.com/mbruhn/SnowSnap.git
 cd SnowSnap
 ```
-Note if you are downloading the ZIP file note the extraction directory may be different from above (normally it is a concatenatation of the repository name and the branch e.g. SnowSnap-main)  
+Note if you are downloading the ZIP file note, the extraction directory may be different from the above (normally, it is a concatenation of the repository name and the branch e.g. SnowSnap-main)  
 
 ### Install dependencies
 ```bash
@@ -40,13 +40,13 @@ Run the tool with the following command:
 node index.js
 ```
 
-This will start the web application which will be available here
+This will start the web application, which will be available here
 ```text
 http://localhost:3010
 ```
 
 ## Usage
-To get started with generating artifacts, follow these steps:
+To get started with generating artefacts, follow these steps:
 
 ### Step 1: Prepare the CSV File
 
@@ -67,7 +67,7 @@ The generated JSON files will be saved in the download directory, and you can ac
 
 ### Step 3: Upload Artifacts to SAP Datasphere
 
-Once the JSON files are generated, you can upload them to SAP Datasphere using the platform’s import functionality.
+Once the JSON files are generated, you can upload them to SAP Datasphere using the platform’s import functionality - Note that the dataflows carries both the remote table and local table - hence there is no need to import all three files.
 
 ## How It Works
 
@@ -81,7 +81,7 @@ The tool uses a combination of pre-defined templates and metadata mappings to st
 
 ## Examples
 
-A sample CSV file with Snowflake table definitions is included in the examples directory. This file serves as an example of the required format and helps you get started quickly.
+A sample CSV file with Snowflake table definitions is included in the examples directory. This file is an example of the required format and helps you get started quickly.
 
 ## Contributing
 
