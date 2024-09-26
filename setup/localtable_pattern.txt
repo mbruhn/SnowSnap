@@ -1,0 +1,20 @@
+{
+  "definitions": {
+    "LT_&TABLENAME&": {
+      "kind": "entity",
+      "@ObjectModel.supportedCapabilities": [
+        {
+          "#": "DATA_STRUCTURE"
+        }
+      ],
+      "elements": {
+        &_COLUMN_ELEMENTS_&
+      },
+      "@EndUserText.label": "&TABLEDESCRIPTION&",
+      "@ObjectModel.modelingPattern": {
+        "#": "DATA_STRUCTURE"
+      }
+
+    }
+  }
+}

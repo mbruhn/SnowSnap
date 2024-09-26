@@ -1,0 +1,6 @@
+{
+    "&COLNAME&": {
+        "vflow.type": "scalar",
+        "vtype-ID": "$INLINE.string_5000"
+    }
+}

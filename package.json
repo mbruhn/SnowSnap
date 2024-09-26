@@ -1,0 +1,17 @@
+{
+  "name": "snaptable",
+  "version": "1.0.0",
+  "description": "SnapTable by Effectuate",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "Bruhn",
+  "license": "ISC",
+  "dependencies": {
+    "csv-parser": "^3.0.0",
+    "express": "^4.17.1",
+    "multer": "^1.4.3"
+  }
+}

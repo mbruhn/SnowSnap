@@ -1,0 +1,24 @@
+{
+  "definitions": {
+    "RT_&TABLENAME&": {
+      "kind": "entity",
+      "elements": {
+        &_COLUMN_ELEMENTS_&
+      },
+      "@ObjectModel.supportedCapabilities": [
+        {
+          "#": "SQL_DATA_SOURCE"
+        },
+        {
+          "#": "DATA_STRUCTURE"
+        }
+      ],
+      "@EndUserText.label": "&TABLEDESCRIPTION&",
+      "@ObjectModel.modelingPattern": {
+        "#": "DATA_STRUCTURE"
+      },
+      "@DataWarehouse.remote.connection": "&SPACECONNECTION&",
+      "@DataWarehouse.remote.entity": "&SCHEMANAME&.&TABLENAME&"
+    }
+  }
+}

@@ -1,0 +1,6 @@
+    "&COLNAME&": {
+    "@EndUserText.label": "&COLDESCRIPTION&",
+    "type": "&CDSTYPE&",
+    "@DataWarehouse.native.dataType": "&TYPE&"
+    &LENGTH&
+    }

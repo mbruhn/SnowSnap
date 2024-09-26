@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SnapTable</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+<div class="container">
+    <h1>SnapTable</h1>
+    <div class="drop-zone-container">
+        <button class="info-button blue" id="showSqlButton">i</button>
+        <div class="drop-zone" id="drop-zone">
+            Drag & Drop CSV file with table definitions here or click to upload
+        </div>
+        <button class="info-button orange" id="showJsonButton">i</button>
+    </div>
+    <input type="file" id="fileInput" accept=".csv">
+
+    <div class="checkboxes">
+        <label><input type="checkbox" id="remoteTable" checked> Remote Table</label>
+        <label id="replication-label"><input type="checkbox" id="replication" checked> Dataflow</label>
+        <script>
+            // hide repl box note should be <label><input type="checkbox" id="replication" checked> Dataflow </label>
+
+           /* const checkbox = document.getElementById('replication');
+            const label = document.getElementById('replication-label');
+            checkbox.checked = false;
+            checkbox.style.display = 'none';
+            label.style.display = 'none';
+            */
+        </script>
+        <label><input type="checkbox" id="localTable" checked> Local Table</label>
+    </div>
+
+    <div class="space-connection">
+        <label for="spaceConnection">Space connection</label>
+        <input type="text" id="spaceConnection" placeholder="Enter connection name">
+        <small>Specify the connection name in the space you plan to import to</small>
+    </div>
+
+    <div class="output" id="output"></div>
+    <table id="tablesTable" style="display:none;">
+        <thead>
+        <tr>
+            <th>Schema Name</th>
+            <th>Table Name</th>
+            <th>Table Description</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+</div>
+
+<!-- SQL Code Modal -->
+<div id="sqlModal" class="modal">
+    <div class="modal-content">
+        <span class="close-button" id="closeSqlButton">&times;</span>
+        <pre>
+select top 1000
+    t.schema_name as schemaname,
+    t.table_name as tablename,
+    '"' || cast(coalesce(t.comments,'') as nvarchar(1000)) || '"' as tabledescription,
+    c.column_name as colname,
+    coalesce(k.is_primary_key,'FALSE') as KEY,
+    '"' || cast(coalesce(c.comments,'') as nvarchar(1000)) || '"' as coldescription,
+    c.data_type_name as type,
+    c.length,
+    cast(coalesce(c.scale, 0) as integer) as scale
+from tables as t
+left join table_columns as c
+    on c.table_name = t.table_name
+    and c.schema_name = t.schema_name
+left join constraints as k
+    on k.schema_name = t.schema_name
+    and k.table_name = t.table_name
+    and k.column_name = c.column_name
+/*where t.schema_name = 'Something'*/
+order by schemaname, tablename, c.position;
+            </pre>
+    </div>
+</div>
+
+<!-- JSON Data Modal -->
+<div id="jsonModal" class="modal">
+    <div class="modal-content">
+        <span class="close-button" id="closeJsonButton">&times;</span>
+        <div id="jsonContent"></div>
+    </div>
+</div>
+
+<script src="fileHandler.js"></script>
+<script src="tableHandler.js"></script>
+<script src="modalHandler.js"></script>
+<script src="downloadHandler.js"></script>
+<script src="main.js"></script>
+</body>
+</html>

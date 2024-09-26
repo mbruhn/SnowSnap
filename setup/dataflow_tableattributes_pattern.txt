@@ -1,0 +1,5 @@
+{
+  "name": "&COLNAME&",
+  "templateType": "string",
+  "length": 5000
+}

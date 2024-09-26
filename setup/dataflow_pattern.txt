@@ -1,0 +1,159 @@
+{
+  "definitions": {
+    &_JSON_LT_&
+    ,
+    &_JSON_RT_&
+    },
+  "dataflows": {
+    "DF_&TABLENAME&": {
+      "kind": "sap.dis.dataflow",
+      "@EndUserText.label": "DF_&TABLENAME&",
+      "contents": {
+        "description": "DF_&TABLENAME&",
+        "processes": {
+          "source1": {
+            "component": "com.sap.database.table.consumer",
+            "metadata": {
+              "label": "RT_&TABLENAME&",
+              "x": 199,
+              "y": 242,
+              "height": 60,
+              "width": 120,
+              "config": {
+                "service": "HANA",
+                "hanaConnection": {
+                  "configurationType": "Configuration Manager",
+                  "connectionID": "$DWC"
+                },
+                "qualifiedName": "RT_&TABLENAME&",
+                "dwcEntity": "RT_&TABLENAME&",
+                "remoteObjectType": "TABLE",
+                "fetchSize": 1000,
+                "forceFetchSize": false,
+                "failOnStringTruncation": true
+              },
+              "outports": [
+                {
+                  "name": "outTable",
+                  "type": "table",
+                  "vtype-ID": "$INLINE.source1_outTable"
+                }
+              ]
+            }
+          },
+          "target1": {
+            "component": "com.sap.database.table.producer",
+            "metadata": {
+              "label": "LT_&TABLENAME&",
+              "x": 585,
+              "y": 242,
+              "height": 60,
+              "width": 120,
+              "config": {
+                "service": "HANA",
+                "hanaConnection": {
+                  "configurationType": "Configuration Manager",
+                  "connectionID": "$DWC"
+                },
+                "qualifiedName": "LT_&TABLENAME&",
+                "dwcEntity": "LT_&TABLENAME&",
+                "remoteObjectType": "TABLE",
+                "fetchSize": 1000,
+                "forceFetchSize": false,
+                "failOnStringTruncation": true,
+                "mode": "append",
+                "upsert": false,
+                "batchSize": 1000,
+                "forceBatchSize": false,
+                "attributeMappings": [
+                    &_ATTRIBUTE_MAPPING_&
+                ],
+                "hanaAdaptedDataset": {
+                  "schema": {
+                    "genericType": "TABLE",
+                    "tableBasedRepresentation": {
+                      "attributes": [
+                         &_TABLE_ATTRIBUTES_&
+                      ]
+                    }
+                  }
+                }
+              },
+              "inports": [
+                {
+                  "name": "inTable",
+                  "type": "table",
+                  "vtype-ID": "$INLINE.source1_outTable"
+                }
+              ]
+            }
+          }
+        },
+        "groups": [],
+        "connections": [
+          {
+            "metadata": {
+              "points": "319,272 581.5,272"
+            },
+            "src": {
+              "port": "outTable",
+              "process": "source1"
+            },
+            "tgt": {
+              "port": "inTable",
+              "process": "target1"
+            }
+          }
+        ],
+        "inports": {},
+        "outports": {},
+        "properties": {},
+        "vTypes": {
+          "scalar": {
+            "string_5000": {
+              "name": "string_5000",
+              "description": "String(5000)",
+              "vflow.type": "scalar",
+              "template": "string",
+              "value.length": 5000
+            }
+          },
+          "structure": {},
+          "table": {
+            "source1_outTable": {
+              "name": "source1_outTable",
+              "vflow.type": "table",
+              "rows": {
+                "components": [
+                    &_TABLE_COMPONENTS_&
+                ]
+              }
+            }
+          }
+        },
+        "metadata": {
+          "dwc-isPrimaryKeysProcessed": true,
+          "dwc-restartOnFail": false
+        },
+        "parameters": {},
+        "parameterMapping": {}
+      },
+      "sources": {
+        "RT_&TABLENAME&": {
+          "elements": {
+            &_DATAFLOW_ELEMENTS_&
+          }
+        }
+      },
+      "targets": {
+        "LT_&TABLENAME&": {
+          "elements": {
+           &_DATAFLOW_ELEMENTS_&
+          }
+        }
+      },
+      "connections": {}
+    }
+  },
+  "$version": "1.0"
+}
