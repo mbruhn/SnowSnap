@@ -42,12 +42,23 @@ Generate your CSV file containing table definitions. A sample CSV file is alread
 SCHEMANAME,TABLENAME,TABLEDESCRIPTION,COLNAME,KEY,COLDESCRIPTION,TYPE,LENGTH,SCALE
 ```
 
+
+
+
 ### Step 2: Run the Tool
 
 Run the tool with the following command:
 
+```bash
 node index.js
+```
 
+This will start the web application which will be available here
+```text
+http://localhost:3010
+```
+
+### Step 3: Using the Tool
 The tool will process the CSV file and generate JSON files for the following artifacts:
 
 	•	Local Table JSON: <tableName>_local_table.json
