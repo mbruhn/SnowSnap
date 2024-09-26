@@ -25,6 +25,7 @@ This Node.js tool automates the generation of necessary SAP Datasphere artifacts
 git clone https://github.com/mbruhn/SnowSnap.git
 cd SnowSnap
 ```
+Note if you are downloading the ZIP file note the extraction directory may be different from above (normally it is a concatenatation of the repository name and the branch e.g. SnowSnap-main)  
 
 ### Install dependencies
 ```bash
