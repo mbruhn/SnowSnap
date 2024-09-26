@@ -38,7 +38,9 @@ To get started with generating artifacts, follow these steps:
 
 Generate your CSV file containing table definitions. A sample CSV file is already included for tables in a Snowflake system. Ensure your file follows the correct format:
 
+```csv
 SCHEMANAME,TABLENAME,TABLEDESCRIPTION,COLNAME,KEY,COLDESCRIPTION,TYPE,LENGTH,SCALE
+```
 
 ### Step 2: Run the Tool
 
