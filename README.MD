@@ -84,7 +84,12 @@ A sample CSV file with Snowflake table definitions is included in the examples d
 
 ## Contributing
 
-Feel free to contribute to the project by submitting pull requests or opening issues on the GitHub repository.
+Contributions to the codebase are currently **not accepted**, but we welcome feedback, suggestions, and issue reports!
+
+- **Raise an Issue**: If you encounter a bug or have suggestions for improvements, please open an issue in the [GitHub Issues](https://github.com/mbruhn/SnowSnap/issues) section of this repository.
+- **Feature Requests**: Feel free to suggest features or enhancements via the issues section as well.
+
+Thank you for understanding!
 
 ## License
 
