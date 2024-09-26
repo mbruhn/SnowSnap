@@ -16,14 +16,14 @@ This Node.js tool automates the generation of necessary SAP Datasphere artifacts
 
   ```csv
   SCHEMANAME,TABLENAME,TABLEDESCRIPTION,COLNAME,KEY,COLDESCRIPTION,TYPE,LENGTH,SCALE
-  
+  ```
 
 ## Installation
 
 ### Clone the repository
 ```
 git clone https://github.com/mbruhn/SnowSnap.git
-cd SnowSnap´´´
+cd SnowSnap```
 
 ### Install dependencies
 npm install
