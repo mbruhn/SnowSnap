@@ -1,4 +1,4 @@
-# SAP Datasphere Artifact Generator, Snaptable (Snowflake)
+# SAP Datasphere Artifact Generator, SnowSnap (Snowflake)
 
 This Node.js tool automates the generation of necessary SAP Datasphere artifacts (Remote Tables, Local Tables, and Dataflows) based on table definitions provided in a CSV file. It streamlines the process by converting the CSV metadata into appropriate JSON files, which can be used for import into SAP Datasphere.
 
